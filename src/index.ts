@@ -66,6 +66,11 @@ export default defineIntegration({
         { name: 'body', type: 'string', description: 'Response body as a string (JSON responses are returned as a JSON string).' },
         { name: 'headers', type: 'object', description: 'Response headers as key-value pairs.' },
       ],
+      mockExecute: async (args, _ctx) => ({
+        status: 200,
+        body: '{}',
+        headers: { 'content-type': 'application/json' },
+      }),
       execute: async (args) => {
         const url = args['url']
         if (typeof url !== 'string' || !url) {
@@ -162,6 +167,11 @@ export default defineIntegration({
         { name: 'url', type: 'string', description: 'The final URL after any redirects.' },
         { name: 'status', type: 'number', description: 'HTTP status code of the page response.' },
       ],
+      mockExecute: async (args, _ctx) => ({
+        data: {},
+        url: String(args.url ?? 'https://example.com'),
+        status: 200,
+      }),
       execute: async (args) => {
         const url = args['url']
         if (typeof url !== 'string' || !url) {
@@ -293,6 +303,11 @@ export default defineIntegration({
         { name: 'url', type: 'string', description: 'The final URL after any redirects.' },
         { name: 'title', type: 'string', description: 'Page title extracted from the HTML.' },
       ],
+      mockExecute: async (args, _ctx) => ({
+        content: '# Mock Page\n\nThis is mock page content for workflow authoring.',
+        url: String(args.url ?? 'https://example.com'),
+        title: 'Mock Page',
+      }),
       execute: async (args) => {
         const url = args['url']
         if (typeof url !== 'string' || !url) {
