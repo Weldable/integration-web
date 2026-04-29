@@ -1,32 +1,12 @@
 # @weldable/integration-web
 
-Web scraping actions for the Weldable integration ecosystem.
+This is one integration in the Weldable integrations family. Conventions, action authoring patterns, error classes, and the release process are documented canonically in **[integration-core's CLAUDE.md](https://github.com/weldable/integration-core/blob/main/CLAUDE.md)** — read that first for any non-trivial change.
 
-## Layout
+## Local quirks
 
-```
-src/
-  index.ts   — defines the integration via defineIntegration() from @weldable/integration-core
-```
-
-Uses `cheerio` for HTML parsing and `turndown` for HTML-to-markdown conversion.
-
-## Dev workflow
-
-```bash
-npm install
-npm run build   # tsc → dist/
-npm run dev     # watch mode
-```
-
-`dist/` is gitignored and built by CI before publishing — do not commit it.
+- Auth type is `none` (no credentials required — this integration fetches public web content).
+- Uses `cheerio` for HTML parsing and `turndown` for HTML-to-markdown conversion.
 
 ## Releasing
 
-Bump `version` in `package.json`, commit to `main`, push. `publish.yml` handles the rest (build, publish to npm, tag, GitHub release).
-
-Use the `/commit` skill — it handles the version bump, build check, and push.
-
-## Contributing
-
-See [CONTRIBUTING.md in integration-core](https://github.com/weldable/integration-core/blob/main/CONTRIBUTING.md) for the full workflow, peer dependency policy, and how to create a new integration.
+Use the `/commit` skill — it handles the version bump, build check, and push to trigger the automated npm publish.
