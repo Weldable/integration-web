@@ -6,3 +6,6 @@ dist/
 .env.*
 *.log
 .claude/settings.local.json
+
+# Claude Code plan files
+.plans/
