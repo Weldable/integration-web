@@ -1,6 +1,6 @@
 {
   "name": "@weldable/integration-web",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -14,6 +14,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
+    "test": "tsx --test src/web.test.ts",
     "prepublishOnly": "tsc"
   },
   "peerDependencies": {
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "typescript": "^5.0.0",
+    "tsx": "^4.0.0",
     "@types/node": "^20.0.0",
     "@types/turndown": "^5.0.5",
     "@weldable/integration-core": "^1.0.0"
