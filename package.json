@@ -41,11 +41,11 @@
   "author": "Weldable",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/weldable/integration-web.git"
+    "url": "git+https://github.com/Weldable/integration-web.git"
   },
-  "homepage": "https://github.com/weldable/integration-web#readme",
+  "homepage": "https://github.com/Weldable/integration-web#readme",
   "bugs": {
-    "url": "https://github.com/weldable/integration-web/issues"
+    "url": "https://github.com/Weldable/integration-web/issues"
   },
   "keywords": [
     "weldable",
